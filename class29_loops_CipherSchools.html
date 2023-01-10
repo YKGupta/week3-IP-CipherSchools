@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in Javascript , Map Method in arrays</title>
+</head>
+
+<body>
+    <!-- <ul>
+        <li></li>
+    </ul> -->
+    <script>
+        const array = ["book", "pen", "coffee", "code"];
+        const nestedObjects = {
+            item1: {
+                name: "book",
+                weight: 30,
+            },
+            item2: {
+                name: "pen",
+                weight: 18,
+            },
+            item3: {
+                name: "coffee",
+                weight: 20,
+            },
+            item4: {
+                name: "code",
+                weight: 0,
+            },
+        };
+        const arrayList = document.createElement("ul");
+        // for loop (for arrays)
+        for (let i = 0; i < array.length; i++) {
+            let listItem = document.createElement("li");
+            listItem.innerHTML = array[i];
+            arrayList.append(listItem);
+        }
+        // for of loop (for arrays)
+        for (const item of array) {
+            let listItem = document.createElement("li");
+            listItem.innerHTML = item;
+            arrayList.append(listItem);
+        }
+        // for each loop (for arrays)
+        array.forEach((item) => {
+            let listItem = document.createElement("li");
+            listItem.innerHTML = item;
+            arrayList.append(listItem);
+        });
+        // for in loop for (objects)
+        for (const singleObject in nestedObjects) {
+            let listItem = document.createElement("li");
+            listItem.ineerHTML = `List Items :${nestedObjects[singleObject].name}`;
+            arrayList.append(listItem);
+        }
+        //map() method (for arrays)
+        const listItems = array.map((item) => {
+            let listItem = document.createElement("li");
+            listItem.innerHTML = item;
+            return listItem;
+        });
+        listItems.forEach((item) => {
+            arrayList.append(item);
+        });
+        document.body.append(arrayList);
+    </script>
+</body>
+
+</html>
